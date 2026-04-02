@@ -52,7 +52,7 @@ variable "openai_deployment_capacity" {
 variable "openai_deployment_name" {
   description = "Name of the Azure OpenAI model deployment"
   type        = string
-  default     = "textembedding3small"
+  default     = "gpt4o"
 }
 
 variable "openai_deployment_sku_name" {
@@ -64,13 +64,13 @@ variable "openai_deployment_sku_name" {
 variable "openai_model_name" {
   description = "Azure OpenAI model name to deploy"
   type        = string
-  default     = "text-embedding-3-small"
+  default     = "gpt-4o"
 }
 
 variable "openai_model_version" {
   description = "Azure OpenAI model version to deploy"
   type        = string
-  default     = "1"
+  default     = "2024-11-20"
 }
 
 variable "tags" {
