@@ -43,6 +43,36 @@ variable "resource_group_name" {
   default     = "rg-students-terraform"
 }
 
+variable "openai_deployment_capacity" {
+  description = "Capacity units for the OpenAI model deployment"
+  type        = number
+  default     = 10
+}
+
+variable "openai_deployment_name" {
+  description = "Name of the Azure OpenAI model deployment"
+  type        = string
+  default     = "textembedding3small"
+}
+
+variable "openai_deployment_sku_name" {
+  description = "SKU name for the Azure OpenAI model deployment"
+  type        = string
+  default     = "Standard"
+}
+
+variable "openai_model_name" {
+  description = "Azure OpenAI model name to deploy"
+  type        = string
+  default     = "text-embedding-3-small"
+}
+
+variable "openai_model_version" {
+  description = "Azure OpenAI model version to deploy"
+  type        = string
+  default     = "1"
+}
+
 variable "tags" {
   description = "Additional tags to apply to the resource group"
   type        = map(string)

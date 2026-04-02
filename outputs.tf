@@ -17,3 +17,8 @@ output "foundry_account_name" {
   description = "Name of the Azure OpenAI account"
   value       = azurerm_cognitive_account.foundry.name
 }
+
+output "openai_deployment_name" {
+  description = "Name of the Azure OpenAI model deployment"
+  value       = azurerm_cognitive_deployment.openai_model.name
+}

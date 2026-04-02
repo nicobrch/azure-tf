@@ -14,3 +14,19 @@ resource "azurerm_cognitive_account" "foundry" {
   sku_name                      = "S0"
   tags                          = local.default_tags
 }
+
+resource "azurerm_cognitive_deployment" "openai_model" {
+  cognitive_account_id = azurerm_cognitive_account.foundry.id
+  name                 = var.openai_deployment_name
+
+  model {
+    format  = "OpenAI"
+    name    = var.openai_model_name
+    version = var.openai_model_version
+  }
+
+  sku {
+    capacity = var.openai_deployment_capacity
+    name     = var.openai_deployment_sku_name
+  }
+}
