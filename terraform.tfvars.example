@@ -1,0 +1,9 @@
+subscription_id    = "00000000-0000-0000-0000-000000000000"
+environment        = "dev"
+location           = "eastus"
+resource_group_name = "rg-students-terraform"
+
+tags = {
+  Owner   = "your-name"
+  Project = "azure-students-lab"
+}
