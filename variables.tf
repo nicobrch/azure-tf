@@ -20,6 +20,23 @@ variable "location" {
   default     = "eastus"
 }
 
+variable "foundry_location" {
+  description = "Azure region where the Azure OpenAI (Foundry) account will be created"
+  type        = string
+  default     = "eastus2"
+
+  validation {
+    condition = contains([
+      "brazilsouth",
+      "canadacentral",
+      "centralus",
+      "eastus2",
+      "mexicocentral"
+    ], var.foundry_location)
+    error_message = "Foundry location must be one of the policy-allowed regions: brazilsouth, canadacentral, centralus, eastus2, mexicocentral."
+  }
+}
+
 variable "resource_group_name" {
   description = "Name of the Azure resource group"
   type        = string
