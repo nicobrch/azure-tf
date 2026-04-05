@@ -52,25 +52,25 @@ variable "openai_deployment_capacity" {
 variable "openai_deployment_name" {
   description = "Name of the Azure OpenAI model deployment"
   type        = string
-  default     = "gpt-5-4-nano"
+  default     = "gpt4o"
 }
 
 variable "openai_deployment_sku_name" {
   description = "SKU name for the Azure OpenAI model deployment"
   type        = string
-  default     = "GlobalStandard"
+  default     = "Standard"
 }
 
 variable "openai_model_name" {
   description = "Azure OpenAI model name to deploy"
   type        = string
-  default     = "gpt-5.4-nano"
+  default     = "gpt-4o"
 }
 
 variable "openai_model_version" {
   description = "Azure OpenAI model version to deploy"
   type        = string
-  default     = "2026-03-17"
+  default     = "2024-11-20"
 }
 
 variable "embedding_deployment_capacity" {
