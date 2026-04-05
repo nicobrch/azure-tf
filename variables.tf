@@ -58,13 +58,13 @@ variable "openai_deployment_name" {
 variable "openai_deployment_sku_name" {
   description = "SKU name for the Azure OpenAI model deployment"
   type        = string
-  default     = "Standard"
+  default     = "GlobalStandard"
 }
 
 variable "openai_model_name" {
-  description = "Azure OpenAI model identifier to deploy"
+  description = "Azure OpenAI model name to deploy"
   type        = string
-  default     = "azureml://registries/azure-openai/models/gpt-5.4-nano/versions/2026-03-17"
+  default     = "gpt-5.4-nano"
 }
 
 variable "openai_model_version" {
