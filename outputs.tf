@@ -19,6 +19,11 @@ output "foundry_account_name" {
 }
 
 output "openai_deployment_name" {
-  description = "Name of the Azure OpenAI model deployment"
-  value       = azurerm_cognitive_deployment.openai_model.name
+  description = "Name of the Azure OpenAI chat model deployment"
+  value       = azurerm_cognitive_deployment.chat_model.name
+}
+
+output "embedding_deployment_name" {
+  description = "Name of the Azure OpenAI embedding model deployment"
+  value       = azurerm_cognitive_deployment.embedding_model.name
 }

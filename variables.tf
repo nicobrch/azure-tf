@@ -52,7 +52,7 @@ variable "openai_deployment_capacity" {
 variable "openai_deployment_name" {
   description = "Name of the Azure OpenAI model deployment"
   type        = string
-  default     = "gpt4o"
+  default     = "gpt-5-4-nano"
 }
 
 variable "openai_deployment_sku_name" {
@@ -62,15 +62,45 @@ variable "openai_deployment_sku_name" {
 }
 
 variable "openai_model_name" {
-  description = "Azure OpenAI model name to deploy"
+  description = "Azure OpenAI model identifier to deploy"
   type        = string
-  default     = "gpt-4o"
+  default     = "azureml://registries/azure-openai/models/gpt-5.4-nano/versions/2026-03-17"
 }
 
 variable "openai_model_version" {
   description = "Azure OpenAI model version to deploy"
   type        = string
-  default     = "2024-11-20"
+  default     = "2026-03-17"
+}
+
+variable "embedding_deployment_capacity" {
+  description = "Capacity units for the embedding model deployment"
+  type        = number
+  default     = 1
+}
+
+variable "embedding_deployment_name" {
+  description = "Name of the Azure OpenAI embedding model deployment"
+  type        = string
+  default     = "text-embedding-3-small"
+}
+
+variable "embedding_deployment_sku_name" {
+  description = "SKU name for the Azure OpenAI embedding deployment"
+  type        = string
+  default     = "Standard"
+}
+
+variable "embedding_model_name" {
+  description = "Azure OpenAI embedding model name to deploy"
+  type        = string
+  default     = "text-embedding-3-small"
+}
+
+variable "embedding_model_version" {
+  description = "Azure OpenAI embedding model version to deploy"
+  type        = string
+  default     = "1"
 }
 
 variable "tags" {

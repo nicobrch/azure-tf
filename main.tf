@@ -15,7 +15,7 @@ resource "azurerm_cognitive_account" "foundry" {
   tags                          = local.default_tags
 }
 
-resource "azurerm_cognitive_deployment" "openai_model" {
+resource "azurerm_cognitive_deployment" "chat_model" {
   cognitive_account_id = azurerm_cognitive_account.foundry.id
   name                 = var.openai_deployment_name
 
@@ -29,4 +29,25 @@ resource "azurerm_cognitive_deployment" "openai_model" {
     capacity = var.openai_deployment_capacity
     name     = var.openai_deployment_sku_name
   }
+}
+
+resource "azurerm_cognitive_deployment" "embedding_model" {
+  cognitive_account_id = azurerm_cognitive_account.foundry.id
+  name                 = var.embedding_deployment_name
+
+  model {
+    format  = "OpenAI"
+    name    = var.embedding_model_name
+    version = var.embedding_model_version
+  }
+
+  sku {
+    capacity = var.embedding_deployment_capacity
+    name     = var.embedding_deployment_sku_name
+  }
+}
+
+moved {
+  from = azurerm_cognitive_deployment.openai_model
+  to   = azurerm_cognitive_deployment.embedding_model
 }
